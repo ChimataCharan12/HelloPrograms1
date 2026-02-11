@@ -5,22 +5,27 @@
 </head>
 <body>
 
+<h2>Simple Calculator</h2>
+
+<input type="number" id="num1" placeholder="Enter first number">
+<input type="number" id="num2" placeholder="Enter second number">
+<button onclick="calculate()">Calculate</button>
+
+<div id="result"></div>
+
 <script>
-    // Prompt user for numbers
-    var n1 = parseInt(window.prompt("Enter the first number"));
-    var n2 = parseInt(window.prompt("Enter the second number"));
+function calculate() {
+    var n1 = parseFloat(document.getElementById("num1").value);
+    var n2 = parseFloat(document.getElementById("num2").value);
 
-    // Calculate results
-    var r1 = n1 + n2;
-    var r2 = n1 - n2;
-    var r3 = n1 * n2;
-    var r4 = n1 / n2;
+    var output = "";
+    output += "<h3>Addition: " + (n1 + n2) + "</h3>";
+    output += "<h3>Subtraction: " + (n1 - n2) + "</h3>";
+    output += "<h3>Multiplication: " + (n1 * n2) + "</h3>";
+    output += "<h3>Division: " + (n1 / n2) + "</h3>";
 
-    // Display results inside the page
-    document.body.innerHTML += "<h1>Addition: " + r1 + "</h1>";
-    document.body.innerHTML += "<h1>Subtraction: " + r2 + "</h1>";
-    document.body.innerHTML += "<h1>Multiplication: " + r3 + "</h1>";
-    document.body.innerHTML += "<h1>Division: " + r4 + "</h1>";
+    document.getElementById("result").innerHTML = output;
+}
 </script>
 
 </body>
