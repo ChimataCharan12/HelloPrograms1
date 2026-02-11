@@ -9,12 +9,13 @@
 
 <input type="number" id="num1" placeholder="Enter first number">
 <input type="number" id="num2" placeholder="Enter second number">
-<button onclick="calculate()">Calculate</button>
+<button id="calcBtn">Calculate</button>
 
 <div id="result"></div>
 
 <script>
-function calculate() {
+document.getElementById("calcBtn").addEventListener("click", function() {
+
     var n1 = parseFloat(document.getElementById("num1").value);
     var n2 = parseFloat(document.getElementById("num2").value);
 
@@ -25,7 +26,8 @@ function calculate() {
     output += "<h3>Division: " + (n1 / n2) + "</h3>";
 
     document.getElementById("result").innerHTML = output;
-}
+
+});
 </script>
 
 </body>
